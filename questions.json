@@ -1,0 +1,1922 @@
+[
+{
+"id": 1,
+"question": "Was passiert beim Kompilieren einer .java-Datei?",
+"options": {
+"A": "Der Java-Code wird direkt in ein ausführbares Windows-Programm (.exe) umgewandelt.",
+"B": "Der Code wird automatisch interpretiert und ohne weitere Dateien ausgeführt.",
+"C": "Der Java-Quellcode wird in Bytecode übersetzt und als .class-Datei gespeichert.",
+"D": "Der Code wird in eine Textdatei konvertiert, die von der Konsole gelesen wird."
+},
+"correctAnswer": "C",
+"explanation": "Beim Kompilieren übersetzt der Java-Compiler (javac) den Quellcode in sogenannten Bytecode.\nDieser wird in einer Datei mit der Endung .class gespeichert.\nDer Bytecode wird anschließend von der Java Virtual Machine (JVM) ausgeführt.\nDadurch kann Java-Code auf vielen verschiedenen Betriebssystemen laufen, ohne dass er neu kompiliert werden muss."
+},
+{
+"id": 2,
+"question": "Wo wird eine Benutzereingabe gespeichert, wenn sie später im Programm erneut verwendet werden soll?",
+"options": {
+"A": "In einer Variablen mit einem passenden Datentyp",
+"B": "Direkt im Scanner-Objekt ohne zusätzliche Speicherung",
+"C": "Automatisch im Arbeitsspeicher der Konsole",
+"D": "In einer Methode ohne Rückgabewert"
+},
+"correctAnswer": "A",
+"explanation": "Wenn ein Benutzer etwas eingibt, muss dieser Wert normalerweise in einer Variable gespeichert werden.\nEine Variable ist ein benannter Speicherplatz im Programm.\nDadurch kann der eingegebene Wert später wieder verwendet oder weiter verarbeitet werden.\nBeispiel:\nScanner sc = new Scanner(System.in);\nString name = sc.nextLine();\nHier wird die Eingabe in der Variable name gespeichert."
+},
+{
+"id": 3,
+"question": "Welche Schreibweise liest eine ganze Zahl korrekt über einen Scanner ein?",
+"options": {
+"A": "int zahl = sc.nextInt();",
+"B": "int zahl = sc.nextLine();",
+"C": "int zahl = Scanner.nextInt();",
+"D": "int zahl = sc.inputInt();"
+},
+"correctAnswer": "A",
+"explanation": "Der Scanner besitzt verschiedene Methoden, um Daten einzulesen.\nFür ganze Zahlen wird die Methode nextInt() verwendet.\nDer Rückgabewert wird anschließend in einer Variable gespeichert.\nBeispiel:\nScanner sc = new Scanner(System.in);\nint zahl = sc.nextInt();\nDamit kann das Programm eine Zahl von der Tastatur einlesen."
+},
+{
+"id": 4,
+"question": "Welche Bedingung überprüft korrekt, ob eine Zahl größer oder gleich 16 ist?",
+"options": {
+"A": "if (16 => alter)",
+"B": "if (alter >= 16)",
+"C": "if (alter = 16)",
+"D": "if (alter >> 16)"
+},
+"correctAnswer": "B",
+"explanation": "Vergleiche werden in Java mit Vergleichsoperatoren durchgeführt.\nDer Operator >= bedeutet größer oder gleich.\nDas Ergebnis eines solchen Vergleichs ist ein boolescher Wert (true oder false).\nDieser Wert kann direkt in einer if-Bedingung verwendet werden.\nBeispiel:\nif (alter >= 16) {\n System.out.println(\"Zutritt erlaubt\");\n}"
+},
+{
+"id": 5,
+"question": "Welcher Operator verknüpft zwei Bedingungen logisch mit „UND“?",
+"options": {
+"A": "||",
+"B": "&&",
+"C": "==",
+"D": "!="
+},
+"correctAnswer": "B",
+"explanation": "Der Operator && ist der logische UND-Operator.\nBeide Bedingungen müssen wahr sein, damit das Gesamtergebnis true wird.\nBeispiel:\nif (ausweis && alter >= 16) {\n System.out.println(\"Zutritt erlaubt\");\n}\nHier muss sowohl ein Ausweis vorhanden sein als auch das Mindestalter erfüllt werden."
+},
+{
+"id": 6,
+"question": "Welche Schleife wird kopfgesteuert ausgeführt?",
+"options": {
+"A": "do-while",
+"B": "for",
+"C": "repeat-until",
+"D": "case-loop"
+},
+"correctAnswer": "B",
+"explanation": "Eine kopfgesteuerte Schleife überprüft die Bedingung bereits vor dem ersten Durchlauf.\nWenn die Bedingung sofort falsch ist, wird der Schleifenblock gar nicht ausgeführt.\nDie for-Schleife ist eine typische kopfgesteuerte Schleife.\nBeispiel:\nfor (int i = 1; i <= 5; i++) {\n System.out.println(i);\n}\nHier wird die Bedingung i <= 5 vor jedem Durchlauf geprüft."
+},
+{
+"id": 7,
+"question": "Welche Schleife wird mindestens einmal ausgeführt, bevor die Bedingung geprüft wird?",
+"options": {
+"A": "for",
+"B": "while",
+"C": "do-while",
+"D": "switch"
+},
+"correctAnswer": "C",
+"explanation": "Bei einer do-while-Schleife wird der Codeblock zuerst ausgeführt.\nErst danach wird die Bedingung überprüft.\nDadurch läuft diese Schleife immer mindestens einmal.\nBeispiel:\ndo {\n System.out.println(\"Hallo\");\n} while (zahl < 5);\nSelbst wenn zahl bereits größer als 5 ist, wird die Ausgabe einmal ausgeführt."
+},
+{
+"id": 8,
+"question": "Welche Struktur beschreibt den Aufbau einer for-Schleife korrekt?",
+"options": {
+"A": "for (Bedingung; Initialisierung; Veränderung)",
+"B": "for (Initialisierung; Bedingung; Veränderung)",
+"C": "for (Veränderung; Initialisierung; Bedingung)",
+"D": "for (Bedingung; Veränderung; Initialisierung)"
+},
+"correctAnswer": "B",
+"explanation": "Die for-Schleife besteht aus drei Teilen:\n1. Initialisierung (Startwert)\n2. Bedingung (wann die Schleife weiterläuft)\n3. Veränderung der Schleifenvariable\nBeispiel:\nfor (int i = 1; i <= 10; i++) {\n System.out.println(i);\n}\nHier startet i bei 1 und wird nach jedem Durchlauf um 1 erhöht."
+},
+{
+"id": 9,
+"question": "Wie kann überprüft werden, ob eine Zahl ein Vielfaches von 5 ist?",
+"options": {
+"A": "zahl % 5 == 0",
+"B": "zahl / 5 == 0",
+"C": "zahl * 5 == 0",
+"D": "zahl + 5 == 0"
+},
+"correctAnswer": "A",
+"explanation": "Der Operator % berechnet den Rest einer Division.\nWenn der Rest 0 ist, ist die Zahl ein Vielfaches der Divisorzahl.\nBeispiel:\nif (zahl % 5 == 0) {\n System.out.println(\"Vielfaches von 5\");\n}\nBei 10 % 5 entsteht der Rest 0, daher ist 10 ein Vielfaches von 5."
+},
+{
+"id": 10,
+"question": "Welche Schleife eignet sich besonders gut, um Zahlen von 1 bis 10 auszugeben?",
+"options": {
+"A": "Eine switch-Anweisung mit zehn Fällen",
+"B": "Eine for-Schleife mit einer Zählvariable",
+"C": "Eine if-Verzweigung mit mehreren Bedingungen",
+"D": "Eine Methode ohne Rückgabewert"
+},
+"correctAnswer": "B",
+"explanation": "Eine for-Schleife eignet sich besonders gut für Zählvorgänge.\nEine Schleifenvariable wird dabei automatisch erhöht, bis die Bedingung nicht mehr erfüllt ist.\nBeispiel:\nfor (int i = 1; i <= 10; i++) {\n System.out.println(i);\n}\nDas Programm gibt alle Zahlen von 1 bis 10 aus."
+},
+{
+"id": 11,
+"question": "Welcher Schleifentyp wird häufig verwendet, wenn die Anzahl der Durchläufe vorher bekannt ist?",
+"options": {
+"A": "do-while-Schleife",
+"B": "for-Schleife",
+"C": "switch-Schleife",
+"D": "try-Schleife"
+},
+"correctAnswer": "B",
+"explanation": "Die for-Schleife wird meistens verwendet, wenn man vorher weiß, wie oft ein Codeblock ausgeführt werden soll.\nSie enthält eine Initialisierung, eine Bedingung und eine Veränderung der Zählvariable.\nBeispiel:\nfor (int i = 0; i < 5; i++) {\n System.out.println(i);\n}\nDie Schleife läuft hier fünfmal."
+},
+{
+"id": 12,
+"question": "Welche Bedingung sorgt dafür, dass eine while-Schleife weiterläuft?",
+"options": {
+"A": "Die Bedingung ergibt den Wert false",
+"B": "Die Bedingung ergibt den Wert true",
+"C": "Die Bedingung enthält eine Variable",
+"D": "Die Bedingung enthält eine Ausgabe"
+},
+"correctAnswer": "B",
+"explanation": "Eine while-Schleife wird so lange ausgeführt, wie ihre Bedingung true ist.\nSobald die Bedingung false wird, endet die Schleife.\nBeispiel:\nint i = 0;\nwhile (i < 5) {\n System.out.println(i);\n i++;\n}\nDie Schleife läuft, solange i < 5 wahr ist."
+},
+{
+"id": 13,
+"question": "Welche Schleife eignet sich besonders, wenn ein Code mindestens einmal ausgeführt werden soll?",
+"options": {
+"A": "for-Schleife",
+"B": "while-Schleife",
+"C": "do-while-Schleife",
+"D": "foreach-Schleife"
+},
+"correctAnswer": "C",
+"explanation": "Die do-while-Schleife prüft ihre Bedingung erst nach dem Schleifendurchlauf.\nDadurch wird der Codeblock immer mindestens einmal ausgeführt.\nBeispiel:\ndo {\n System.out.println(\"Hallo\");\n} while (false);\nHier wird die Ausgabe trotzdem einmal angezeigt."
+},
+{
+"id": 14,
+"question": "Welcher Teil einer for-Schleife legt den Startwert fest?",
+"options": {
+"A": "Die Initialisierung",
+"B": "Die Bedingung",
+"C": "Die Veränderung",
+"D": "Der Schleifenblock"
+},
+"correctAnswer": "A",
+"explanation": "Die Initialisierung definiert den Startwert der Schleifenvariable.\nBeispiel:\nfor (int i = 1; i <= 5; i++)\nHier ist int i = 1 die Initialisierung."
+},
+{
+"id": 15,
+"question": "Welcher Ausdruck erhöht eine Schleifenvariable um 1?",
+"options": {
+"A": "i + 1",
+"B": "i =+ 1",
+"C": "i++",
+"D": "+i"
+},
+"correctAnswer": "C",
+"explanation": "Der Operator ++ erhöht den Wert einer Variable um eins.\nBeispiel:\ni++;\nDies ist eine Kurzform von:\ni = i + 1;"
+},
+{
+"id": 16,
+"question": "Was passiert, wenn eine Schleifenbedingung niemals false wird?",
+"options": {
+"A": "Das Programm beendet sich automatisch",
+"B": "Die Schleife läuft unendlich weiter",
+"C": "Die Schleife wird übersprungen",
+"D": "Die Schleife wird einmal ausgeführt"
+},
+"correctAnswer": "B",
+"explanation": "Wenn eine Bedingung immer true bleibt, entsteht eine Endlosschleife.\nDas Programm verlässt die Schleife dann nicht mehr.\nBeispiel:\nwhile (true) {\n System.out.println(\"Endlos\");\n}"
+},
+{
+"id": 17,
+"question": "Welche Schleife prüft ihre Bedingung vor jedem Durchlauf?",
+"options": {
+"A": "while-Schleife",
+"B": "do-while-Schleife",
+"C": "try-Schleife",
+"D": "catch-Schleife"
+},
+"correctAnswer": "A",
+"explanation": "Die while-Schleife ist kopfgesteuert.\nDie Bedingung wird vor jedem Durchlauf geprüft.\nWenn sie bereits am Anfang false ist, wird der Schleifenblock gar nicht ausgeführt."
+},
+{
+"id": 18,
+"question": "Was macht die Anweisung break innerhalb einer Schleife?",
+"options": {
+"A": "Sie überspringt eine Iteration",
+"B": "Sie beendet die Schleife sofort",
+"C": "Sie setzt die Schleife zurück",
+"D": "Sie erhöht die Schleifenvariable"
+},
+"correctAnswer": "B",
+"explanation": "break beendet die Schleife sofort, unabhängig von der Bedingung.\nBeispiel:\nfor (int i = 0; i < 10; i++) {\n if (i == 5) {\n break;\n }\n}\nDie Schleife endet bei i = 5."
+},
+{
+"id": 19,
+"question": "Was bewirkt die Anweisung continue in einer Schleife?",
+"options": {
+"A": "Die Schleife wird beendet",
+"B": "Der aktuelle Durchlauf wird übersprungen",
+"C": "Die Schleifenvariable wird gelöscht",
+"D": "Das Programm stoppt"
+},
+"correctAnswer": "B",
+"explanation": "continue überspringt den restlichen Code im aktuellen Durchlauf und startet direkt den nächsten Schleifendurchlauf.\nBeispiel:\nfor (int i = 0; i < 5; i++) {\n if (i == 2) {\n continue;\n }\n System.out.println(i);\n}\nDie Zahl 2 wird nicht ausgegeben."
+},
+{
+"id": 20,
+"question": "Welche Schleife eignet sich besonders für das Durchlaufen eines Arrays?",
+"options": {
+"A": "do-while-Schleife",
+"B": "switch-Schleife",
+"C": "for-Schleife",
+"D": "try-Schleife"
+},
+"correctAnswer": "C",
+"explanation": "Arrays werden häufig mit einer for-Schleife durchlaufen, weil man den Index kontrollieren kann.\nBeispiel:\nfor (int i = 0; i < array.length; i++) {\n System.out.println(array[i]);\n}"
+},
+{
+"id": 21,
+"question": "Was ist eine Iteration in einer Schleife?",
+"options": {
+"A": "Die Schleifenvariable",
+"B": "Ein einzelner Durchlauf der Schleife",
+"C": "Die Bedingung der Schleife",
+"D": "Der Startwert der Schleife"
+},
+"correctAnswer": "B",
+"explanation": "Eine Iteration ist ein einzelner Durchlauf einer Schleife.\nWenn eine Schleife fünfmal läuft, hat sie fünf Iterationen."
+},
+{
+"id": 22,
+"question": "Welche Bedingung würde eine Schleife genau zehnmal ausführen?",
+"options": {
+"A": "i < 10 bei Startwert 1",
+"B": "i <= 10 bei Startwert 1",
+"C": "i < 10 bei Startwert 0",
+"D": "i <= 10 bei Startwert 0"
+},
+"correctAnswer": "C",
+"explanation": "Wenn i bei 0 startet und solange i < 10 gilt, läuft die Schleife zehnmal.\nfor (int i = 0; i < 10; i++)\nDie Werte gehen von 0 bis 9."
+},
+{
+"id": 23,
+"question": "Welche Variable wird typischerweise als Zählvariable verwendet?",
+"options": {
+"A": "summe",
+"B": "wert",
+"C": "i",
+"D": "scanner"
+},
+"correctAnswer": "C",
+"explanation": "In Schleifen wird häufig i als Zählvariable verwendet.\nDas ist eine etablierte Konvention in vielen Programmiersprachen."
+},
+{
+"id": 24,
+"question": "Welche Schleife kann auch ohne Zählvariable verwendet werden?",
+"options": {
+"A": "while-Schleife",
+"B": "for-Schleife",
+"C": "switch-Schleife",
+"D": "case-Schleife"
+},
+"correctAnswer": "A",
+"explanation": "Eine while-Schleife benötigt keine feste Zählvariable.\nSie läuft einfach so lange, bis ihre Bedingung false wird."
+},
+{
+"id": 25,
+"question": "Was beschreibt der Ausdruck i += 2 in einer Schleife?",
+"options": {
+"A": "i wird mit 2 multipliziert",
+"B": "i wird um 2 erhöht",
+"C": "i wird auf 2 gesetzt",
+"D": "i wird durch 2 geteilt"
+},
+"correctAnswer": "B",
+"explanation": "i += 2 ist eine Kurzform für:\ni = i + 2;\nDie Variable wird also um 2 erhöht."
+},
+{
+"id": 26,
+"question": "Was passiert, wenn die Veränderung einer Schleifenvariable vergessen wird?",
+"options": {
+"A": "Die Schleife läuft nur einmal",
+"B": "Das Programm kompiliert nicht",
+"C": "Es kann eine Endlosschleife entstehen",
+"D": "Die Schleife wird automatisch beendet"
+},
+"correctAnswer": "C",
+"explanation": "Wenn sich die Schleifenvariable nicht verändert, kann die Bedingung dauerhaft wahr bleiben.\nDadurch läuft die Schleife unendlich weiter."
+},
+{
+"id": 27,
+"question": "Wie wird eine Schleife genannt, die innerhalb einer anderen Schleife steht?",
+"options": {
+"A": "Parallel-Schleife",
+"B": "Geschachtelte Schleife",
+"C": "Bedingte Schleife",
+"D": "Kombinierte Schleife"
+},
+"correctAnswer": "B",
+"explanation": "Eine Schleife innerhalb einer anderen Schleife nennt man geschachtelte Schleife.\nSie wird häufig verwendet, um Tabellen oder Muster auszugeben."
+},
+{
+"id": 28,
+"question": "Wie oft wird diese Schleife ausgeführt?\nfor (int i = 1; i <= 3; i++)",
+"options": {
+"A": "einmal",
+"B": "zweimal",
+"C": "dreimal",
+"D": "viermal"
+},
+"correctAnswer": "C",
+"explanation": "Die Werte von i sind:\n1\n2\n3\nDamit läuft die Schleife drei Iterationen."
+},
+{
+"id": 29,
+"question": "Welcher Ausdruck prüft korrekt, ob zwei Zahlen unterschiedlich sind?",
+"options": {
+"A": "a = b",
+"B": "a != b",
+"C": "a <> b",
+"D": "a >< b"
+},
+"correctAnswer": "B",
+"explanation": "Der Operator != bedeutet „ungleich“ und wird in Java verwendet, um zwei Werte miteinander zu vergleichen.\nDas Ergebnis ist ein Wahrheitswert (true oder false).\nWenn die beiden verglichenen Werte unterschiedlich sind, liefert der Ausdruck true, ansonsten false.\nDieser Operator ist besonders wichtig in Bedingungen von Schleifen und if-Abfragen."
+},
+{
+"id": 30,
+"question": "Welche Schleife ist besonders geeignet für unbestimmte Wiederholungen?",
+"options": {
+"A": "while-Schleife",
+"B": "for-Schleife",
+"C": "switch-Schleife",
+"D": "case-Schleife"
+},
+"correctAnswer": "A",
+"explanation": "Die while-Schleife wird verwendet, wenn vorher nicht klar ist, wie oft ein Codeblock ausgeführt wird.\nSie prüft vor jedem Durchlauf eine Bedingung und läuft nur solange diese true ist.\nDadurch eignet sie sich besonders für Eingaben oder Situationen mit unklarer Wiederholungsanzahl.\nSie ist eine der flexibelsten Schleifenarten in Java."
+},
+{
+"id": 31,
+"question": "Wie oft wird die folgende Schleife ausgeführt?\nfor (int i = 0; i < 3; i++)",
+"options": {
+"A": "einmal",
+"B": "zweimal",
+"C": "dreimal",
+"D": "viermal"
+},
+"correctAnswer": "C",
+"explanation": "Die Schleifenvariable startet bei 0 und wird bei jedem Durchlauf um 1 erhöht.\nDie Bedingung i < 3 ist für die Werte 0, 1 und 2 wahr.\nSobald i den Wert 3 erreicht, wird die Schleife beendet.\nInsgesamt ergibt das drei vollständige Iterationen in Java."
+},
+{
+"id": 32,
+"question": "Was ist das Ergebnis dieses Codes?\nfor (int i = 1; i <= 3; i++) {\n System.out.println(i);\n}",
+"options": {
+"A": "1 2 3",
+"B": "0 1 2",
+"C": "1 2",
+"D": "1 2 3 4"
+},
+"correctAnswer": "A",
+"explanation": "Die Schleife startet bei 1 und endet bei 3, da die Bedingung i <= 3 gilt.\nIn jedem Durchlauf wird der aktuelle Wert von i ausgegeben.\nDanach wird i jeweils um 1 erhöht.\nDadurch entsteht die Ausgabe 1, 2, 3 in Java."
+},
+{
+"id": 33,
+"question": "Welche Schleife läuft rückwärts von 10 bis 1?",
+"options": {
+"A": "for (int i = 10; i <= 1; i--)",
+"B": "for (int i = 10; i >= 1; i--)",
+"C": "for (int i = 1; i <= 10; i--)",
+"D": "for (int i = 1; i >= 10; i++)"
+},
+"correctAnswer": "B",
+"explanation": "Die Schleife beginnt bei 10 und zählt mit i-- nach unten.\nDie Bedingung i >= 1 stellt sicher, dass sie stoppt, sobald i kleiner als 1 wird.\nDadurch werden alle Zahlen von 10 bis 1 ausgegeben.\nDiese Schreibweise ist typisch für absteigende Schleifen in Java."
+},
+{
+"id": 34,
+"question": "Welche Bedingung würde eine Endlosschleife verursachen?",
+"options": {
+"A": "i < 10 bei i++",
+"B": "i <= 10 bei i++",
+"C": "i > 0 bei i++",
+"D": "i >= 0 bei i--"
+},
+"correctAnswer": "C",
+"explanation": "Wenn eine Variable wie i mit i++ ständig erhöht wird, bleibt die Bedingung i > 0 dauerhaft wahr, wenn sie einmal erfüllt ist.\nDadurch endet die Schleife nicht mehr.\nDas führt zu einer Endlosschleife, die das Programm blockieren kann.\nSolche Fehler treten häufig in Java auf."
+},
+{
+"id": 35,
+"question": "Welcher Code erzeugt eine Schleife mit genau fünf Durchläufen?",
+"options": {
+"A": "for (int i = 1; i <= 5; i++)",
+"B": "for (int i = 1; i < 5; i++)",
+"C": "for (int i = 0; i < 4; i++)",
+"D": "for (int i = 1; i <= 4; i++)"
+},
+"correctAnswer": "A",
+"explanation": "Die Werte der Schleife sind 1, 2, 3, 4 und 5.\nDamit ergeben sich genau fünf Iterationen.\nDie Bedingung i <= 5 erlaubt den letzten Wert 5 noch.\nDanach wird die Schleife beendet.\nDieses Muster ist sehr typisch in Java."
+},
+{
+"id": 36,
+"question": "Was passiert bei diesem Code?\nint i = 0;\nwhile (i < 5) {\n System.out.println(i);\n}",
+"options": {
+"A": "Zahlen von 0 bis 4 werden ausgegeben",
+"B": "Die Schleife läuft nur einmal",
+"C": "Es entsteht eine Endlosschleife",
+"D": "Der Code kompiliert nicht"
+},
+"correctAnswer": "C",
+"explanation": "Die Variable i wird innerhalb der Schleife nicht verändert, wodurch die Bedingung i < 5 dauerhaft wahr bleibt.\nDadurch wird die Schleife nie beendet.\nSie läuft unendlich weiter und blockiert den Programmablauf.\nSolche Fehler treten häufig in Java auf."
+},
+{
+"id": 37,
+"question": "Was bewirkt dieser Code?\nfor (int i = 0; i < 5; i += 2)",
+"options": {
+"A": "Die Schleife läuft fünfmal",
+"B": "i wird jedes Mal verdoppelt",
+"C": "i wird um zwei erhöht",
+"D": "i bleibt konstant"
+},
+"correctAnswer": "C",
+"explanation": "Der Ausdruck i += 2 bedeutet, dass i in jedem Durchlauf um 2 erhöht wird.\nDadurch entstehen die Werte 0, 2 und 4.\nSobald i den Wert 6 erreichen würde, endet die Schleife, da die Bedingung nicht mehr erfüllt ist.\nDieses Muster ist typisch für Zählschritte in Java."
+},
+{
+"id": 38,
+"question": "Wie oft wird dieser Code ausgeführt?\ndo {\n System.out.println(\"Test\");\n} while (false);",
+"options": {
+"A": "nie",
+"B": "einmal",
+"C": "zweimal",
+"D": "unendlich"
+},
+"correctAnswer": "B",
+"explanation": "Bei einer do-while-Schleife wird der Codeblock zuerst ausgeführt, bevor die Bedingung geprüft wird.\nDadurch läuft der Block mindestens einmal, auch wenn die Bedingung sofort false ist.\nDanach wird die Schleife beendet.\nDieses Verhalten unterscheidet sie klar von anderen Schleifen in Java."
+},
+{
+"id": 39,
+"question": "Welche Ausgabe entsteht?\nfor (int i = 1; i <= 3; i++) {\n System.out.println(\"Hallo\");\n}",
+"options": {
+"A": "Hallo",
+"B": "Hallo Hallo",
+"C": "Hallo Hallo Hallo",
+"D": "keine Ausgabe"
+},
+"correctAnswer": "C",
+"explanation": "Die Schleife läuft insgesamt drei Iterationen, da i von 1 bis 3 zählt.\nIn jeder Iteration wird derselbe Text ausgegeben.\nDadurch erscheint „Hallo“ dreimal untereinander.\nDieses Verhalten ist typisch für Wiederholungen in Java."
+},
+{
+"id": 40,
+"question": "Was passiert bei diesem Code?\nfor (int i = 0; i < 5; i++) {\n if (i == 3) {\n break;\n }\n}",
+"options": {
+"A": "Die Schleife läuft fünfmal",
+"B": "Die Schleife endet bei i = 3",
+"C": "Die Schleife startet neu",
+"D": "Die Schleifenvariable wird gelöscht"
+},
+"correctAnswer": "B",
+"explanation": "Sobald i den Wert 3 erreicht, wird break ausgeführt und die Schleife sofort beendet.\nDadurch werden keine weiteren Iterationen mehr durchgeführt.\nDer Ablauf wird komplett unterbrochen.\nDiese Steueranweisung ist ein wichtiger Bestandteil von Schleifen in Java."
+},
+{
+"id": 41,
+"question": "Welche Ausgabe entsteht?\nfor (int i = 1; i <= 5; i++) {\n if (i == 3) {\n continue;\n }\n System.out.println(i);\n}",
+"options": {
+"A": "1 2 3 4 5",
+"B": "1 2 4 5",
+"C": "3 4 5",
+"D": "1 2 3"
+},
+"correctAnswer": "B",
+"explanation": "Wenn i == 3, wird continue ausgeführt und der aktuelle Durchlauf übersprungen.\nDadurch wird der Code darunter in diesem Durchlauf nicht ausgeführt.\nDie Zahl 3 erscheint deshalb nicht in der Ausgabe.\nDieses Verhalten ist typisch für Schleifenlogik in Java."
+},
+{
+"id": 42,
+"question": "Was beschreibt eine geschachtelte Schleife?",
+"options": {
+"A": "Zwei Schleifen laufen gleichzeitig",
+"B": "Eine Schleife befindet sich innerhalb einer anderen",
+"C": "Zwei Schleifen teilen sich eine Variable",
+"D": "Zwei Schleifen laufen abwechselnd"
+},
+"correctAnswer": "B",
+"explanation": "Eine geschachtelte Schleife liegt vor, wenn sich eine Schleife innerhalb des Blocks einer anderen Schleife befindet.\nDabei wird die innere Schleife bei jedem Durchlauf der äußeren komplett neu ausgeführt.\nDiese Struktur wird oft für Tabellen oder Kombinationen verwendet.\nSie ist ein wichtiges Konzept in Java."
+},
+{
+"id": 43,
+"question": "Wie viele Iterationen entstehen bei dieser Struktur?\nfor (i = 0; i < 3; i++)\n for (j = 0; j < 2; j++)",
+"options": {
+"A": "3",
+"B": "5",
+"C": "6",
+"D": "9"
+},
+"correctAnswer": "C",
+"explanation": "Die äußere Schleife läuft 3-mal, während die innere Schleife bei jedem Durchlauf 2-mal läuft.\nDadurch multiplizieren sich die Durchläufe.\nEs entstehen insgesamt 3 × 2 = 6 Iterationen.\nDieses Prinzip ist typisch für geschachtelte Schleifen in Java."
+},
+{
+"id": 44,
+"question": "Welche Variable ist nur innerhalb der Schleife gültig?\nfor (int i = 0; i < 5; i++)",
+"options": {
+"A": "i",
+"B": "5",
+"C": "int",
+"D": "for"
+},
+"correctAnswer": "A",
+"explanation": "Die Variable i wird innerhalb der Schleife deklariert und ist deshalb nur in diesem Block sichtbar.\nAußerhalb der Schleife kann sie nicht verwendet werden.\nDieses Verhalten nennt man „Gültigkeitsbereich“ oder Scope.\nEs ist ein grundlegendes Konzept in Java."
+},
+{
+"id": 45,
+"question": "Welche Aufgabe erfüllen Schleifen hauptsächlich?",
+"options": {
+"A": "Programme kompilieren",
+"B": "Code mehrfach ausführen",
+"C": "Speicher reservieren",
+"D": "Klassen definieren"
+},
+"correctAnswer": "B",
+"explanation": "Schleifen dienen dazu, bestimmte Anweisungen mehrfach auszuführen, ohne den Code zu wiederholen.\nDadurch wird Programmcode kürzer und effizienter.\nSie sind ein zentrales Werkzeug zur Automatisierung von Abläufen.\nIn Java gehören sie zu den Grundstrukturen."
+},
+{
+"id": 46,
+"question": "Welche Ausgabe erzeugt dieser Code?\nfor (int i = 2; i <= 6; i += 2) {\n System.out.println(i);\n}",
+"options": {
+"A": "2 3 4 5 6",
+"B": "2 4 6",
+"C": "1 3 5",
+"D": "2 6"
+},
+"correctAnswer": "B",
+"explanation": "Die Schleife startet bei 2 und erhöht i jeweils um 2.\nDadurch entstehen die Werte 2, 4 und 6.\nSobald i den Wert 8 erreicht, wird die Bedingung i <= 6 falsch.\nDie Schleife endet dann automatisch in Java."
+},
+{
+"id": 47,
+"question": "Wie oft wird diese Schleife ausgeführt?\nfor (int i = 5; i > 0; i--)",
+"options": {
+"A": "viermal",
+"B": "fünfmal",
+"C": "sechsmal",
+"D": "einmal"
+},
+"correctAnswer": "B",
+"explanation": "Die Variable i startet bei 5 und wird in jedem Durchlauf um 1 verringert.\nSolange i > 0 gilt, läuft die Schleife weiter.\nDie Werte sind 5, 4, 3, 2 und 1, also insgesamt fünf Iterationen.\nDanach wird die Bedingung falsch und die Schleife endet in Java."
+},
+{
+"id": 48,
+"question": "Welche Schleife eignet sich gut für Eingaben, die so lange wiederholt werden sollen, bis eine gültige Eingabe erfolgt?",
+"options": {
+"A": "for-Schleife",
+"B": "while-Schleife",
+"C": "switch-Schleife",
+"D": "try-Schleife"
+},
+"correctAnswer": "B",
+"explanation": "Eine while-Schleife wird verwendet, wenn die Anzahl der Wiederholungen vorher nicht feststeht.\nSie prüft vor jedem Durchlauf eine Bedingung und läuft nur solange diese erfüllt ist.\nDadurch kann man Eingaben so lange wiederholen, bis sie gültig sind.\nDieses Muster ist typisch in Java."
+},
+{
+"id": 49,
+"question": "Welche Ausgabe erzeugt dieser Code?\nfor (int i = 0; i < 3; i++) {\n System.out.print(i);\n}",
+"options": {
+"A": "012",
+"B": "123",
+"C": "001122",
+"D": "321"
+},
+"correctAnswer": "A",
+"explanation": "Die Schleife erzeugt die Werte 0, 1 und 2.\nDa print verwendet wird, erfolgt kein Zeilenumbruch zwischen den Ausgaben.\nDadurch werden die Zahlen direkt hintereinander geschrieben.\nDas Ergebnis ist daher 012 in Java."
+},
+{
+"id": 50,
+"question": "Welche Bedingung prüft korrekt, ob eine Zahl kleiner als 100 ist?",
+"options": {
+"A": "zahl << 100",
+"B": "zahl < 100",
+"C": "zahl <= 100",
+"D": "zahl >< 100"
+},
+"correctAnswer": "B",
+"explanation": "Der Operator < prüft, ob ein Wert kleiner als ein anderer ist.\nWenn die Zahl unter 100 liegt, ergibt die Bedingung true.\nSobald die Zahl 100 oder größer ist, wird sie false.\nDiese Vergleichsoperatoren werden häufig in Schleifen in Java verwendet."
+},
+{
+"id": 51,
+"question": "Welche Ausgabe entsteht?\nfor (int i = 1; i <= 3; i++) {\n System.out.println(\"\");\n}",
+"options": {
+"A": "ein Stern",
+"B": "zwei Sterne",
+"C": "drei Sterne",
+"D": "vier Sterne"
+},
+"correctAnswer": "C",
+"explanation": "Die Schleife läuft insgesamt drei Mal, da i von 1 bis 3 zählt.\nIn jeder Iteration wird ein Stern ausgegeben.\nDadurch entsteht drei Mal die Ausgabe „“.\nDieses Verhalten ist typisch für einfache Schleifen in Java."
+},
+{
+"id": 52,
+"question": "Welche Veränderung reduziert eine Schleifenvariable um 1?",
+"options": {
+"A": "i++",
+"B": "i--",
+"C": "i += 1",
+"D": "i *= 1"
+},
+"correctAnswer": "B",
+"explanation": "Der Operator -- verringert eine Variable um 1 bei jedem Durchlauf.\nDadurch wird die Zählvariable kleiner, statt größer.\nDas wird oft bei rückwärts laufenden Schleifen verwendet.\nSolche Muster sind Standard in Java."
+},
+{
+"id": 53,
+"question": "Welche Struktur beendet eine Schleife sofort, wenn eine Bedingung erfüllt ist?",
+"options": {
+"A": "continue",
+"B": "break",
+"C": "return",
+"D": "next"
+},
+"correctAnswer": "B",
+"explanation": "break beendet eine Schleife sofort, unabhängig von der Bedingung.\nDer restliche Schleifenverlauf wird nicht mehr ausgeführt.\nDadurch kann man Schleifen gezielt abbrechen.\nDieses Konzept ist zentral in Java."
+},
+{
+"id": 54,
+"question": "Welche Schleife eignet sich gut zum Durchlaufen aller Elemente eines Arrays?",
+"options": {
+"A": "for-Schleife",
+"B": "switch-Schleife",
+"C": "try-Schleife",
+"D": "case-Schleife"
+},
+"correctAnswer": "A",
+"explanation": "Mit einer for-Schleife kann man den Index eines Arrays direkt steuern.\nDadurch lassen sich alle Elemente nacheinander gezielt ansprechen.\nMan nutzt dabei meist array.length als Grenze.\nDieses Muster ist Standard in Java."
+},
+{
+"id": 55,
+"question": "Wie nennt man einen einzelnen Durchlauf einer Schleife?",
+"options": {
+"A": "Deklaration",
+"B": "Iteration",
+"C": "Instanz",
+"D": "Initialisierung"
+},
+"correctAnswer": "B",
+"explanation": "Ein einzelner Durchlauf einer Schleife wird Iteration genannt.\nJede Wiederholung entspricht genau einer solchen Iteration.\nWenn eine Schleife fünfmal läuft, besteht sie aus fünf Iterationen.\nDieser Begriff wird in Java häufig verwendet."
+},
+{
+"id": 56,
+"question": "Welche Ausgabe entsteht?\nfor (int i = 1; i <= 2; i++) {\n for (int j = 1; j <= 2; j++) {\n System.out.println(\"X\");\n }\n}",
+"options": {
+"A": "2",
+"B": "3",
+"C": "4",
+"D": "6"
+},
+"correctAnswer": "C",
+"explanation": "Die äußere Schleife läuft 2-mal, die innere ebenfalls 2-mal pro Durchlauf.\nDadurch ergibt sich eine Multiplikation der Iterationen.\nInsgesamt entstehen 2 × 2 = 4 Ausgaben.\nDieses Prinzip ist typisch für geschachtelte Schleifen in Java."
+},
+{
+"id": 57,
+"question": "Welche Bedingung prüft korrekt, ob eine Zahl genau gleich 10 ist?",
+"options": {
+"A": "zahl = 10",
+"B": "zahl == 10",
+"C": "zahl != 10",
+"D": "zahl >= 10"
+},
+"correctAnswer": "B",
+"explanation": "Der Operator == vergleicht zwei Werte auf Gleichheit.\nWenn beide Werte identisch sind, ergibt die Bedingung true.\nAnsonsten ist das Ergebnis false.\nDieser Vergleich ist fundamental in Java."
+},
+{
+"id": 58,
+"question": "Welche Schleife wird häufig für Zählvorgänge verwendet?",
+"options": {
+"A": "for-Schleife",
+"B": "while-Schleife",
+"C": "do-while-Schleife",
+"D": "switch-Schleife"
+},
+"correctAnswer": "A",
+"explanation": "Die for-Schleife ist ideal für Zählvorgänge, da Startwert, Bedingung und Änderung in einer Struktur stehen.\nDadurch ist sie besonders übersichtlich und kompakt.\nSie wird oft genutzt, wenn die Anzahl der Durchläufe bekannt ist.\nDieses Konzept ist Standard in Java."
+},
+{
+"id": 59,
+"question": "Welche Ausgabe entsteht?\nfor (int i = 0; i < 2; i++) {\n System.out.println(\"Java\");\n}",
+"options": {
+"A": "keine Ausgabe",
+"B": "einmal \"Java\"",
+"C": "zweimal \"Java\"",
+"D": "dreimal \"Java\""
+},
+"correctAnswer": "C",
+"explanation": "Die Schleife läuft zwei Mal, da i die Werte 0 und 1 annimmt.\nIn jeder Iteration wird „Java“ ausgegeben.\nDadurch erscheint die Ausgabe genau zweimal.\nDieses Verhalten ist typisch für Schleifen in Java."
+},
+{
+"id": 60,
+"question": "Warum werden Schleifen in Programmen verwendet?",
+"options": {
+"A": "um Variablen zu speichern",
+"B": "um Anweisungen mehrfach auszuführen",
+"C": "um Klassen zu definieren",
+"D": "um Programme zu kompilieren"
+},
+"correctAnswer": "B",
+"explanation": "Schleifen werden eingesetzt, um bestimmte Codeblöcke mehrfach auszuführen, ohne sie mehrfach schreiben zu müssen.\nDadurch wird der Programmcode deutlich kürzer und übersichtlicher.\nAußerdem erleichtert es spätere Änderungen, da nur eine Stelle angepasst werden muss.\nDieses Prinzip ist grundlegend in Java."
+},
+{
+"id": 61,
+"question": "Wann wird eine while-Schleife ausgeführt?",
+"options": {
+"A": "solange die Bedingung true ist",
+"B": "solange die Bedingung false ist",
+"C": "genau einmal unabhängig von der Bedingung",
+"D": "nur wenn eine Variable verändert wird"
+},
+"correctAnswer": "A",
+"explanation": "Eine while-Schleife prüft vor jedem Durchlauf ihre Bedingung.\nNur wenn diese true ist, wird der Schleifenblock ausgeführt.\nSobald die Bedingung false wird, endet die Schleife automatisch.\nDieses Verhalten ist typisch in Java."
+},
+{
+"id": 62,
+"question": "Welche Eigenschaft hat eine do-while-Schleife?",
+"options": {
+"A": "Die Bedingung wird nie geprüft",
+"B": "Der Code wird mindestens einmal ausgeführt",
+"C": "Die Schleife läuft immer genau zweimal",
+"D": "Die Bedingung wird vor dem ersten Durchlauf geprüft"
+},
+"correctAnswer": "B",
+"explanation": "Bei der do-while-Schleife wird der Code zuerst ausgeführt und erst danach die Bedingung geprüft.\nDadurch läuft der Codeblock mindestens einmal, selbst wenn die Bedingung false ist.\nErst danach entscheidet die Bedingung über weitere Wiederholungen.\nDieses Konzept ist fest in Java verankert."
+},
+{
+"id": 63,
+"question": "Welche Bedingung würde eine while-Schleife sofort beenden?",
+"options": {
+"A": "true",
+"B": "false",
+"C": "zahl > 0",
+"D": "i < 10"
+},
+"correctAnswer": "B",
+"explanation": "Wenn die Bedingung einer while-Schleife direkt false ist, wird der Schleifenblock nicht ausgeführt.\nDie Schleife überspringt dann alle Anweisungen vollständig.\nEs findet also keine einzige Iteration statt.\nDieses Verhalten gehört zum Grundprinzip von Java."
+},
+{
+"id": 64,
+"question": "Welche Ausgabe entsteht?\nint i = 1;\nwhile (i <= 3) {\n System.out.println(i);\n i++;\n}",
+"options": {
+"A": "1 2 3",
+"B": "0 1 2",
+"C": "1 2",
+"D": "2 3 4"
+},
+"correctAnswer": "A",
+"explanation": "Die Schleife startet bei i = 1 und läuft solange i ≤ 3 gilt.\nIn jedem Durchlauf wird der aktuelle Wert ausgegeben und anschließend erhöht.\nDadurch entstehen die Werte 1, 2 und 3.\nDanach endet die Schleife automatisch in Java."
+},
+{
+"id": 65,
+"question": "Was passiert, wenn eine Variable in einer while-Schleife nie verändert wird?",
+"options": {
+"A": "Die Schleife läuft nur einmal",
+"B": "Das Programm kompiliert nicht",
+"C": "Es kann eine Endlosschleife entstehen",
+"D": "Die Schleife wird automatisch beendet"
+},
+"correctAnswer": "C",
+"explanation": "Wenn sich die Variable innerhalb der Schleife nicht verändert, bleibt die Bedingung unverändert.\nIst sie einmal true, kann sie dauerhaft true bleiben.\nDadurch läuft die Schleife unendlich weiter.\nSolche Fehler sind typisch in Java."
+},
+{
+"id": 66,
+"question": "Welche Ausgabe entsteht?\nint i = 0;\ndo {\n System.out.println(i);\n i++;\n} while (i < 3);",
+"options": {
+"A": "0 1 2",
+"B": "1 2 3",
+"C": "0 1",
+"D": "1 2"
+},
+"correctAnswer": "A",
+"explanation": "Der Codeblock wird zuerst ausgeführt, bevor die Bedingung geprüft wird.\nDadurch beginnt die Ausgabe bei 0.\nDanach werden 1 und 2 ausgegeben, bevor die Schleife endet.\nDieses Ablaufprinzip ist charakteristisch für Java."
+},
+{
+"id": 67,
+"question": "Welche Aussage beschreibt eine while-Schleife am besten?",
+"options": {
+"A": "Sie wird immer mindestens einmal ausgeführt",
+"B": "Sie prüft die Bedingung vor jedem Durchlauf",
+"C": "Sie kann nur mit Arrays verwendet werden",
+"D": "Sie läuft immer eine feste Anzahl von Iterationen"
+},
+"correctAnswer": "B",
+"explanation": "Die Bedingung einer while-Schleife steht am Anfang der Struktur.\nSie wird vor jedem Durchlauf geprüft, bevor der Code ausgeführt wird.\nDadurch kann die Schleife auch gar nicht starten, wenn die Bedingung false ist.\nDieses Verhalten ist typisch für Java."
+},
+{
+"id": 68,
+"question": "Welche Ausgabe entsteht?\nint i = 5;\nwhile (i > 2) {\n System.out.println(i);\n i--;\n}",
+"options": {
+"A": "5 4 3",
+"B": "5 4",
+"C": "3 2 1",
+"D": "4 3 2"
+},
+"correctAnswer": "A",
+"explanation": "Die Schleife startet bei 5 und läuft solange i > 2 gilt.\nIn jedem Durchlauf wird i ausgegeben und anschließend um 1 verringert.\nDadurch entstehen die Werte 5, 4 und 3.\nDanach endet die Schleife in Java."
+},
+{
+"id": 69,
+"question": "Wofür wird eine for-each-Schleife hauptsächlich verwendet?",
+"options": {
+"A": "zum Durchlaufen aller Elemente eines Arrays oder einer Liste",
+"B": "zum Erhöhen einer Zählvariable",
+"C": "zum Erstellen neuer Variablen",
+"D": "zum Beenden von Schleifen"
+},
+"correctAnswer": "A",
+"explanation": "Die for-each-Schleife wird verwendet, um alle Elemente einer Datenstruktur nacheinander zu durchlaufen.\nDabei wird kein Index benötigt.\nSie ist besonders übersichtlich bei Arrays und Listen.\nDieses Konzept ist fest in Java verankert."
+},
+{
+"id": 70,
+"question": "Welche Schreibweise ist eine korrekte for-each-Schleife?",
+"options": {
+"A": "for (int x : zahlen)",
+"B": "for (zahlen : int x)",
+"C": "foreach (x in zahlen)",
+"D": "for (int x -> zahlen)"
+},
+"correctAnswer": "A",
+"explanation": "Die korrekte Syntax der for-each-Schleife besteht aus Datentyp, Variable und einer Sammlung.\nDer Doppelpunkt trennt dabei die Variable vom Array oder der Liste.\nDiese Schreibweise ist standardisiert in Java.\nAndere Varianten gehören nicht zur gültigen Syntax."
+},
+{
+"id": 71,
+"question": "Was enthält die Variable in einer for-each-Schleife?",
+"options": {
+"A": "den Index des Elements",
+"B": "das aktuelle Element der Sammlung",
+"C": "die Länge des Arrays",
+"D": "die Schleifenbedingung"
+},
+"correctAnswer": "B",
+"explanation": "Die Variable in einer for-each-Schleife repräsentiert immer das aktuelle Element der Datenstruktur.\nEs wird kein Index verwendet, sondern direkt auf die Werte zugegriffen.\nDadurch ist der Code einfacher und lesbarer.\nDieses Verhalten ist typisch in Java."
+},
+{
+"id": 72,
+"question": "Welche Ausgabe entsteht?\nint[] zahlen = {2, 4, 6};\nfor (int z : zahlen) {\n System.out.println(z);\n}",
+"options": {
+"A": "0 1 2",
+"B": "2 4 6",
+"C": "1 3 5",
+"D": "6 4 2"
+},
+"correctAnswer": "B",
+"explanation": "Die for-each-Schleife durchläuft jedes Element des Arrays in der gegebenen Reihenfolge.\nDabei wird jedes Element einzeln ausgegeben.\nDie Ausgabe entspricht daher genau den gespeicherten Werten.\nDieses Prinzip ist typisch für Arrays in Java."
+},
+{
+"id": 73,
+"question": "Welche Einschränkung hat eine for-each-Schleife?",
+"options": {
+"A": "Sie kann nur mit Zahlen arbeiten",
+"B": "Sie kann Arrays nicht lesen",
+"C": "Der Index des Elements ist nicht direkt verfügbar",
+"D": "Sie kann nur einmal ausgeführt werden"
+},
+"correctAnswer": "C",
+"explanation": "Die for-each-Schleife gibt direkt die Elemente eines Arrays oder einer Liste aus.\nDabei wird jedoch kein Zugriff auf die Position (Index) bereitgestellt.\nWenn man den Index benötigt, muss man eine klassische for-Schleife verwenden.\nDieses Verhalten ist typisch in Java."
+},
+{
+"id": 74,
+"question": "Welche Ausgabe entsteht?\nint[] zahlen = {1, 2};\nfor (int z : zahlen) {\n System.out.println(\"Hi\");\n}",
+"options": {
+"A": "Hi",
+"B": "Hi Hi",
+"C": "Hi Hi Hi",
+"D": "keine Ausgabe"
+},
+"correctAnswer": "B",
+"explanation": "Das Array enthält zwei Elemente, daher läuft die Schleife genau zwei Mal.\nIn jeder Iteration wird unabhängig vom Wert des Elements „Hi“ ausgegeben.\nDie Anzahl der Ausgaben hängt also nur von der Länge des Arrays ab.\nDieses Prinzip gilt in Java."
+},
+{
+"id": 75,
+"question": "Welche Struktur gehört zu einer do-while-Schleife?",
+"options": {
+"A": "do { ... } while (Bedingung);",
+"B": "while { ... } do (Bedingung);",
+"C": "do while { ... }",
+"D": "while do { ... }"
+},
+"correctAnswer": "A",
+"explanation": "Die do-while-Schleife besteht aus einem Codeblock, der zuerst ausgeführt wird, und einer anschließenden Bedingung.\nDiese Bedingung entscheidet erst nach dem ersten Durchlauf über weitere Wiederholungen.\nDadurch läuft der Code mindestens einmal.\nDiese Struktur ist fest definiert in Java."
+},
+{
+"id": 76,
+"question": "Welche Schleife eignet sich gut für Menüprogramme, die wiederholt laufen sollen?",
+"options": {
+"A": "while-Schleife",
+"B": "switch-Schleife",
+"C": "case-Schleife",
+"D": "try-Schleife"
+},
+"correctAnswer": "A",
+"explanation": "Eine while-Schleife eignet sich gut für Programme, die so lange laufen sollen, bis der Benutzer eine Abbruchbedingung erfüllt.\nTypisch ist ein Menü, das wiederholt angezeigt wird.\nErst wenn der Nutzer „Beenden“ wählt, endet die Schleife.\nDieses Muster ist sehr häufig in Java."
+},
+{
+"id": 77,
+"question": "Welche Ausgabe entsteht?\nint i = 0;\ndo {\n i++;\n} while (i < 3);\nSystem.out.println(i);",
+"options": {
+"A": "2",
+"B": "3",
+"C": "4",
+"D": "1"
+},
+"correctAnswer": "B",
+"explanation": "Die Schleife erhöht i zuerst und prüft danach die Bedingung.\nDie Werte entwickeln sich von 0 → 1 → 2 → 3.\nSobald i den Wert 3 erreicht, endet die Schleife.\nDanach wird 3 ausgegeben.\nDieses Verhalten ist typisch für Java."
+},
+{
+"id": 78,
+"question": "Welche Bedingung prüft, ob eine Zahl positiv ist?",
+"options": {
+"A": "zahl > 0",
+"B": "zahl < 0",
+"C": "zahl == 0",
+"D": "zahl != 0"
+},
+"correctAnswer": "A",
+"explanation": "Eine Zahl ist positiv, wenn sie größer als 0 ist.\nDer Vergleichsoperator > prüft genau diese Bedingung.\nWenn die Zahl 0 oder negativ ist, wird die Bedingung false.\nSolche Vergleiche werden häufig in Java genutzt."
+},
+{
+"id": 79,
+"question": "Wie nennt man einen einzelnen Durchlauf einer Schleife?",
+"options": {
+"A": "Instanz",
+"B": "Iteration",
+"C": "Deklaration",
+"D": "Kompilierung"
+},
+"correctAnswer": "B",
+"explanation": "Ein einzelner Durchlauf einer Schleife wird Iteration genannt.\nJede Wiederholung des Schleifenblocks entspricht genau einer solchen Iteration.\nWenn eine Schleife fünfmal läuft, besteht sie aus fünf Iterationen.\nDieser Begriff ist Standard in Java."
+},
+{
+"id": 80,
+"question": "Warum werden Schleifen verwendet?",
+"options": {
+"A": "um Programme zu kompilieren",
+"B": "um Code mehrfach auszuführen",
+"C": "um Klassen zu erstellen",
+"D": "um Variablen zu löschen"
+},
+"correctAnswer": "B",
+"explanation": "Schleifen ermöglichen es, einen Codeblock mehrfach auszuführen, ohne ihn mehrfach schreiben zu müssen.\nDadurch wird der Code effizienter und leichter wartbar.\nAußerdem reduzieren sie Fehler durch doppelte Schreibarbeit.\nDieses Grundkonzept ist zentral in Java."
+},
+{
+"id": 81,
+"question": "Wann wird eine while-Schleife ausgeführt?",
+"options": {
+"A": "immer genau einmal",
+"B": "bevor die Bedingung geprüft wird",
+"C": "solange die Bedingung wahr ist",
+"D": "nur bei Zahlen"
+},
+"correctAnswer": "C",
+"explanation": "Eine while-Schleife prüft vor jedem Durchlauf ihre Bedingung.\nNur wenn diese true ist, wird der Schleifenblock ausgeführt.\nSobald sie false wird, endet die Schleife.\nDieses Verhalten ist typisch in Java."
+},
+{
+"id": 82,
+"question": "Was passiert hier?\nint i = 0;\nwhile (i < 3) {\n System.out.println(i);\n}",
+"options": {
+"A": "0 1 2",
+"B": "0",
+"C": "Endlosschleife",
+"D": "kein Output"
+},
+"correctAnswer": "C",
+"explanation": "Die Variable i wird innerhalb der Schleife nicht verändert.\nDadurch bleibt die Bedingung i < 3 dauerhaft true.\nDie Schleife endet nie und läuft unendlich weiter.\nSolche Fehler sind typisch in Java."
+},
+{
+"id": 83,
+"question": "Welche Änderung verhindert eine Endlosschleife?",
+"options": {
+"A": "i--",
+"B": "i++",
+"C": "keine Änderung",
+"D": "i = i"
+},
+"correctAnswer": "B",
+"explanation": "Eine Endlosschleife entsteht oft, wenn sich die Schleifenvariable nicht verändert.\nDurch i++ wird die Variable in jedem Durchlauf erhöht.\nDadurch kann die Bedingung irgendwann false werden.\nDieses Prinzip ist wichtig in Java."
+},
+{
+"id": 84,
+"question": "Welche Bedingung beendet eine while-Schleife sofort?",
+"options": {
+"A": "true",
+"B": "false",
+"C": "1",
+"D": "null"
+},
+"correctAnswer": "B",
+"explanation": "Wenn die Bedingung einer while-Schleife false ist, wird der Schleifenblock nicht ausgeführt.\nDie Schleife endet sofort bzw. startet gar nicht.\nEs findet keine Iteration statt.\nDieses Verhalten gehört zum Grundprinzip von Java."
+},
+{
+"id": 85,
+"question": "Welche Schleife ist kopfgesteuert?",
+"options": {
+"A": "while",
+"B": "do-while",
+"C": "for-each",
+"D": "switch"
+},
+"correctAnswer": "A",
+"explanation": "Eine kopfgesteuerte Schleife prüft ihre Bedingung vor jedem Durchlauf.\nDie while-Schleife gehört genau zu dieser Kategorie.\nWenn die Bedingung false ist, wird kein einziger Durchlauf ausgeführt.\nDieses Konzept ist Standard in Java."
+},
+{
+"id": 86,
+"question": "Was ist ein typischer Fehler bei while?",
+"options": {
+"A": "falscher Datentyp",
+"B": "fehlender return",
+"C": "fehlende Aktualisierung der Variable",
+"D": "zu viele Klassen"
+},
+"correctAnswer": "C",
+"explanation": "Ein häufiger Fehler ist, dass die Schleifenvariable nicht verändert wird.\nDadurch bleibt die Bedingung dauerhaft gleich.\nDas führt oft zu Endlosschleifen.\nDieses Problem tritt häufig in Java auf."
+},
+{
+"id": 87,
+"question": "Welche Bedingung läuft 5-mal (Start 0)?",
+"options": {
+"A": "i <= 4",
+"B": "i < 4",
+"C": "i > 5",
+"D": "i == 5"
+},
+"correctAnswer": "A",
+"explanation": "Wenn i bei 0 startet und die Bedingung i <= 4 lautet, werden die Werte 0 bis 4 durchlaufen.\nDas ergibt insgesamt fünf Iterationen.\nDanach wird die Bedingung false.\nDieses Zählprinzip ist typisch in Java."
+},
+{
+"id": 88,
+"question": "Was passiert, wenn die Bedingung direkt false ist?",
+"options": {
+"A": "einmalige Ausgabe",
+"B": "Fehler",
+"C": "keine Ausführung",
+"D": "Endlosschleife"
+},
+"correctAnswer": "C",
+"explanation": "Wenn die Bedingung einer Schleife direkt false ist, wird der Schleifenblock nicht ausgeführt.\nDas bedeutet, dass keine einzige Iteration stattfindet.\nDas Programm überspringt die Schleife vollständig und fährt danach normal fort.\nDieses Verhalten ist typisch in Java."
+},
+{
+"id": 89,
+"question": "Welche Rolle hat i in while-Schleifen meistens?",
+"options": {
+"A": "Datentyp",
+"B": "Zählvariable",
+"C": "Methode",
+"D": "Klasse"
+},
+"correctAnswer": "B",
+"explanation": "Die Variable i wird in Schleifen meistens als Zählvariable verwendet.\nSie dient dazu, die Anzahl der Durchläufe zu steuern oder zu kontrollieren.\nIn jedem Durchlauf wird sie typischerweise verändert, z. B. erhöht oder verringert.\nDieses Muster ist Standard in Java."
+},
+{
+"id": 90,
+"question": "Welche Schleife eignet sich für unbekannte Wiederholungen?",
+"options": {
+"A": "for-each",
+"B": "while",
+"C": "switch",
+"D": "import"
+},
+"correctAnswer": "B",
+"explanation": "Eine while-Schleife wird verwendet, wenn nicht vorher klar ist, wie oft eine Wiederholung stattfinden soll.\nDie Schleife läuft so lange, wie eine Bedingung erfüllt ist.\nDadurch ist sie flexibel für Eingaben oder Abbruchbedingungen.\nDieses Prinzip ist zentral in Java."
+},
+{
+"id": 91,
+"question": "Was ist das wichtigste Merkmal von do-while?",
+"options": {
+"A": "Bedingung wird nie geprüft",
+"B": "wird mindestens einmal ausgeführt",
+"C": "läuft immer 10-mal",
+"D": "ist eine Methode"
+},
+"correctAnswer": "B",
+"explanation": "Die do-while-Schleife führt den Code zuerst aus, bevor die Bedingung geprüft wird.\nDadurch wird der Schleifenblock mindestens einmal durchlaufen.\nErst danach entscheidet die Bedingung über weitere Wiederholungen.\nDieses Verhalten ist typisch in Java."
+},
+{
+"id": 92,
+"question": "Wann wird die Bedingung geprüft?",
+"options": {
+"A": "vorher",
+"B": "währenddessen",
+"C": "nach dem Block",
+"D": "nie"
+},
+"correctAnswer": "C",
+"explanation": "Bei der do-while-Schleife wird die Bedingung erst nach dem Ausführen des Codeblocks geprüft.\nDas unterscheidet sie von der while-Schleife.\nDadurch wird der Code mindestens einmal garantiert ausgeführt.\nDieses Konzept gehört zu Java."
+},
+{
+"id": 93,
+"question": "Was passiert hier?\ndo {\n System.out.println(\"A\");\n} while (false);",
+"options": {
+"A": "nichts",
+"B": "einmal A",
+"C": "Endlosschleife",
+"D": "Fehler"
+},
+"correctAnswer": "B",
+"explanation": "Der Code im do-Block wird zuerst ausgeführt, unabhängig von der Bedingung.\nDanach wird geprüft, ob die Bedingung true ist.\nDa sie false ist, endet die Schleife sofort nach dem ersten Durchlauf.\nDieses Verhalten ist typisch für Java."
+},
+{
+"id": 94,
+"question": "Typischer Einsatz von do-while?",
+"options": {
+"A": "Login-Abfragen",
+"B": "Arrays sortieren",
+"C": "Klassen erstellen",
+"D": "Compiler starten"
+},
+"correctAnswer": "A",
+"explanation": "do-while wird häufig verwendet, wenn eine Eingabe mindestens einmal erfolgen muss.\nZum Beispiel bei Login-Systemen oder Menüabfragen.\nDanach wird geprüft, ob die Eingabe korrekt war.\nDieses Muster ist typisch in Java."
+},
+{
+"id": 95,
+"question": "Welche Schleife garantiert mindestens einen Durchlauf?",
+"options": {
+"A": "while",
+"B": "for-each",
+"C": "do-while",
+"D": "switch"
+},
+"correctAnswer": "C",
+"explanation": "Die do-while-Schleife führt den Codeblock zuerst aus, bevor die Bedingung geprüft wird.\nDadurch findet immer mindestens eine Ausführung statt.\nSelbst wenn die Bedingung false ist, wurde der Block bereits einmal ausgeführt.\nDieses Prinzip ist zentral in Java."
+},
+{
+"id": 96,
+"question": "Fehler bei do-while?",
+"options": {
+"A": "fehlendes Semikolon am Ende",
+"B": "falscher Datentyp",
+"C": "kein Scanner",
+"D": "fehlender Import"
+},
+"correctAnswer": "A",
+"explanation": "Bei do-while muss am Ende der Schleife ein Semikolon stehen.\nDieses wird oft vergessen, was zu einem Syntaxfehler führt.\nDie Struktur ist sonst korrekt, aber ohne Semikolon ist der Code nicht ausführbar.\nDieses Detail ist wichtig in Java."
+},
+{
+"id": 97,
+"question": "Was steht am Ende von do-while?",
+"options": {
+"A": ":",
+"B": ";",
+"C": ",",
+"D": "{}"
+},
+"correctAnswer": "B",
+"explanation": "Am Ende einer do-while-Schleife steht ein Semikolon.\nEs markiert den Abschluss der Schleifenbedingung.\nOhne dieses Zeichen erkennt der Compiler die Struktur nicht korrekt.\nDas ist eine feste Syntaxregel in Java."
+},
+{
+"id": 98,
+"question": "Warum nutzt man do-while oft bei Eingaben?",
+"options": {
+"A": "schneller",
+"B": "kompakter Code",
+"C": "Eingabe soll mindestens einmal erfolgen",
+"D": "weniger Speicher"
+},
+"correctAnswer": "C",
+"explanation": "do-while wird genutzt, wenn der Code mindestens einmal ausgeführt werden muss.\nBei Eingaben ist das wichtig, da der Benutzer zuerst etwas eingeben soll.\nErst danach wird geprüft, ob die Eingabe gültig ist.\nDieses Muster ist typisch in Java."
+},
+{
+"id": 99,
+"question": "Wofür wird for-each genutzt?",
+"options": {
+"A": "Zahlen berechnen",
+"B": "Arrays durchlaufen",
+"C": "Methoden erstellen",
+"D": "Klassen löschen"
+},
+"correctAnswer": "B",
+"explanation": "for-each wird verwendet, um alle Elemente eines Arrays oder einer Liste zu durchlaufen.\nDabei wird jedes Element automatisch verarbeitet.\nEin Index ist nicht notwendig, was den Code vereinfacht.\nDieses Konzept ist Standard in Java."
+},
+{
+"id": 100,
+"question": "Was enthält die Variable in for-each?",
+"options": {
+"A": "Index",
+"B": "Speicheradresse",
+"C": "aktuelles Element",
+"D": "Länge"
+},
+"correctAnswer": "C",
+"explanation": "Die Variable in einer for-each-Schleife enthält das aktuelle Element der Datenstruktur.\nSie repräsentiert direkt den Wert, nicht die Position.\nDadurch ist kein Zugriff über einen Index notwendig.\nDieses Verhalten ist typisch in Java."
+},
+{
+"id": 101,
+"question": "Was fehlt bei for-each im Vergleich zu for?",
+"options": {
+"A": "Datentyp",
+"B": "Bedingung",
+"C": "Klasse",
+"D": "Scanner"
+},
+"correctAnswer": "B",
+"explanation": "Bei for-each gibt es keine explizite Bedingung wie bei einer klassischen for-Schleife.\nDie Schleife läuft automatisch über alle Elemente der Struktur.\nDadurch ist sie einfacher, aber weniger flexibel.\nDieses Konzept gehört zu Java."
+},
+{
+"id": 102,
+"question": "Kann man den Index direkt verwenden?",
+"options": {
+"A": "ja",
+"B": "nein",
+"C": "nur manchmal",
+"D": "nur bei Strings"
+},
+"correctAnswer": "B",
+"explanation": "In einer for-each-Schleife wird kein Index bereitgestellt.\nMan arbeitet direkt mit den Elementen der Sammlung.\nWenn ein Index benötigt wird, muss man eine klassische for-Schleife verwenden.\nDieses Verhalten ist typisch in Java."
+},
+{
+"id": 103,
+"question": "Welche Struktur ist korrekt?",
+"options": {
+"A": "for (x in array)",
+"B": "for (int x : array)",
+"C": "for array : x",
+"D": "foreach (x : array)"
+},
+"correctAnswer": "B",
+"explanation": "Die korrekte Syntax der for-each-Schleife nutzt einen Doppelpunkt zwischen Variable und Array.\nDer Datentyp wird vor der Variable angegeben.\nDiese Struktur ist fest definiert in Java.\nAndere Varianten sind nicht gültig."
+},
+{
+"id": 104,
+"question": "Typischer Vorteil von for-each?",
+"options": {
+"A": "schneller als while",
+"B": "kein Index nötig",
+"C": "weniger Speicher",
+"D": "kein Java nötig"
+},
+"correctAnswer": "B",
+"explanation": "Der größte Vorteil von for-each ist, dass kein Index verwendet werden muss.\nDadurch wird der Code einfacher und weniger fehleranfällig.\nMan arbeitet direkt mit den Elementen der Datenstruktur.\nDieses Prinzip ist Standard in Java."
+},
+{
+"id": 105,
+"question": "Was ist eine Endlosschleife?",
+"options": {
+"A": "Schleife läuft einmal",
+"B": "Schleife endet sofort",
+"C": "Schleife läuft nie",
+"D": "Schleife läuft unendlich"
+},
+"correctAnswer": "D",
+"explanation": "Eine Endlosschleife läuft dauerhaft, ohne jemals zu stoppen.\nSie entsteht meist, wenn die Abbruchbedingung nie erreicht wird.\nDadurch bleibt das Programm in der Schleife hängen.\nDieses Problem ist typisch in Java."
+},
+{
+"id": 106,
+"question": "Was verursacht sie oft?",
+"options": {
+"A": "fehlender Scanner",
+"B": "fehlende Variableänderung",
+"C": "falscher Import",
+"D": "falscher Klassenname"
+},
+"correctAnswer": "B",
+"explanation": "Eine Endlosschleife entsteht häufig, wenn sich die Schleifenvariable nicht verändert.\nDadurch bleibt die Bedingung immer gleich.\nWenn sie einmal true ist, bleibt sie dauerhaft true.\nDieses Problem tritt häufig in Java auf."
+},
+{
+"id": 107,
+"question": "Was macht break?",
+"options": {
+"A": "überspringt einen Durchlauf",
+"B": "beendet die Schleife",
+"C": "startet neu",
+"D": "löscht Variable"
+},
+"correctAnswer": "B",
+"explanation": "break beendet eine Schleife sofort, unabhängig von der Bedingung.\nDer restliche Code der Schleife wird nicht mehr ausgeführt.\nDadurch kann man Schleifen gezielt abbrechen.\nDieses Konzept ist zentral in Java."
+},
+{
+"id": 108,
+"question": "Was macht continue?",
+"options": {
+"A": "beendet Schleife",
+"B": "überspringt aktuellen Durchlauf",
+"C": "löscht Array",
+"D": "kompiliert Code"
+},
+"correctAnswer": "B",
+"explanation": "continue überspringt den aktuellen Schleifendurchlauf.\nDer restliche Code in diesem Durchlauf wird nicht mehr ausgeführt.\nDanach startet sofort der nächste Durchlauf.\nDieses Verhalten ist typisch in Java."
+},
+{
+"id": 109,
+"question": "Warum nutzt man Schleifen mit Scanner oft?",
+"options": {
+"A": "für Klassen",
+"B": "für wiederholte Eingaben",
+"C": "für Arrays löschen",
+"D": "für Compiler"
+},
+"correctAnswer": "B",
+"explanation": "Scanner wird oft mit Schleifen kombiniert, um Benutzereingaben mehrfach abzufragen.\nDas ist wichtig, wenn Eingaben geprüft oder wiederholt werden müssen.\nSo kann man ungültige Eingaben erneut anfordern.\nDieses Muster ist Standard in Java."
+},
+{
+"id": 110,
+"question": "Welche Kombination ist typisch für Eingaben?",
+"options": {
+"A": "for + switch",
+"B": "while + Scanner",
+"C": "do-while + Scanner",
+"D": "B oder C"
+},
+"correctAnswer": "D",
+"explanation": "Für Eingaben werden häufig while- oder do-while-Schleifen mit Scanner verwendet.\nwhile eignet sich, wenn zuerst geprüft werden soll, do-while, wenn mindestens eine Eingabe erfolgen muss.\nBeide Varianten sind in der Praxis üblich.\nDieses Konzept ist zentral in Java."
+},
+{
+"id": 111,
+"question": "Was ist der korrekte Aufbau einer for-Schleife in Java?",
+"options": {
+"A": "Bedingung – Initialisierung – Veränderung",
+"B": "Initialisierung – Bedingung – Veränderung",
+"C": "Veränderung – Bedingung – Initialisierung",
+"D": "Bedingung – Veränderung – Block"
+},
+"correctAnswer": "B",
+"explanation": "Eine for-Schleife besteht immer aus drei Teilen in fester Reihenfolge.\nZuerst wird die Variable initialisiert, danach folgt die Bedingung.\nAm Ende wird die Variable verändert, z. B. mit i++."
+},
+{
+"id": 112,
+"question": "Was gehört in die geschweiften Klammern einer Schleife?",
+"options": {
+"A": "die Datentypen",
+"B": "die Bedingungen",
+"C": "der wiederholte Code",
+"D": "die Variablennamen"
+},
+"correctAnswer": "C",
+"explanation": "Alles innerhalb der geschweiften Klammern wird bei jeder Schleifenrunde ausgeführt.\nDieser Bereich heißt Codeblock.\nAlles außerhalb wird nur einmal oder gar nicht wiederholt."
+},
+{
+"id": 113,
+"question": "Was bedeutet die Initialisierung in einer Schleife?",
+"options": {
+"A": "die Prüfung der Bedingung",
+"B": "der Startwert der Variablen",
+"C": "das Ende der Schleife",
+"D": "die Ausgabe im Code"
+},
+"correctAnswer": "B",
+"explanation": "Die Initialisierung legt fest, mit welchem Wert die Schleife beginnt.\nMeist wird eine Zählvariable wie i = 0 gesetzt.\nSie wird nur einmal am Anfang ausgeführt."
+},
+{
+"id": 114,
+"question": "Welche Aufgabe hat die Bedingung in einer Schleife?",
+"options": {
+"A": "sie beendet das Programm",
+"B": "sie steuert die Wiederholung",
+"C": "sie speichert Werte",
+"D": "sie erstellt Variablen"
+},
+"correctAnswer": "B",
+"explanation": "Die Bedingung entscheidet, ob die Schleife weiterläuft.\nSie wird vor (oder bei do-while nach) jedem Durchlauf geprüft.\nNur wenn sie true ist, läuft die Schleife weiter."
+},
+{
+"id": 115,
+"question": "Wozu dient i++ in einer Schleife?",
+"options": {
+"A": "Startwert setzen",
+"B": "Bedingung prüfen",
+"C": "Variable erhöhen",
+"D": "Ausgabe erzeugen"
+},
+"correctAnswer": "C",
+"explanation": "i++ erhöht die Schleifenvariable um 1.\nDadurch verändert sich der Zustand der Schleife.\nOhne diese Veränderung kann eine Endlosschleife entstehen."
+},
+{
+"id": 116,
+"question": "Was passiert, wenn die geschweiften Klammern fehlen?",
+"options": {
+"A": "die Schleife läuft schneller",
+"B": "nur eine Zeile wird wiederholt",
+"C": "der Code wird ignoriert",
+"D": "nichts ändert sich"
+},
+"correctAnswer": "B",
+"explanation": "Ohne Klammern gehört nur die erste Zeile zur Schleife.\nAlle weiteren Zeilen laufen dann nicht mit in der Wiederholung.\nDas führt oft zu Fehlern."
+},
+{
+"id": 117,
+"question": "Was bedeutet „Code im Block“?",
+"options": {
+"A": "Code außerhalb der Schleife",
+"B": "Code in den {}",
+"C": "Kommentare im Code",
+"D": "Variablen im Speicher"
+},
+"correctAnswer": "B",
+"explanation": "Der Block einer Schleife wird durch geschweifte Klammern definiert.\nAlles darin wird wiederholt ausgeführt.\nAlles außerhalb nicht."
+},
+{
+"id": 118,
+"question": "Was ist in Java korrekt?",
+"options": {
+"A": "system.out.println()",
+"B": "System.out.println()",
+"C": "System.Out.Println()",
+"D": "system.Out.println()"
+},
+"correctAnswer": "B",
+"explanation": "Java ist case-sensitive, also unterscheidet Groß- und Kleinschreibung. System muss groß geschrieben werden, out und println klein. Sonst entsteht ein Fehler."
+},
+{
+"id": 119,
+"question": "Welche Variable ist korrekt?",
+"options": {
+"A": "1zahl",
+"B": "zahl1",
+"C": "Zahl 1",
+"D": "Z A H L"
+},
+"correctAnswer": "B",
+"explanation": "Variablennamen dürfen nicht mit einer Zahl beginnen und keine Leerzeichen enthalten. Sie beginnen meist mit einem Buchstaben. Kleinbuchstaben sind Standard in Java."
+},
+{
+"id": 120,
+"question": "Welche Schreibweise ist korrekt für eine Klasse?",
+"options": {
+"A": "meineklasse",
+"B": "MeineKlasse",
+"C": "meineKlasse",
+"D": "MEINEKLASSE"
+},
+"correctAnswer": "B",
+"explanation": "Klassennamen werden in Java großgeschrieben und im CamelCase geschrieben. Das verbessert Lesbarkeit und Struktur. Dies ist eine Konvention in Java."
+},
+{
+"id": 121,
+"question": "Welche Schreibweise ist typisch für Methoden?",
+"options": {
+"A": "nextInt()",
+"B": "NextInt()",
+"C": "nextint()",
+"D": "NEXTINT()"
+},
+"correctAnswer": "A",
+"explanation": "Methoden werden in Java meist klein geschrieben und mit Klammern aufgerufen. nextInt() ist eine Scanner-Methode. Großschreibung würde einen Fehler erzeugen."
+},
+{
+"id": 122,
+"question": "Wie wird ein Scanner korrekt erstellt?",
+"options": {
+"A": "Scanner sc = System.in;",
+"B": "Scanner sc = new Scanner(System.in);",
+"C": "scanner sc = new Scanner();",
+"D": "new Scanner sc = System.in;"
+},
+"correctAnswer": "B",
+"explanation": "Der Scanner wird mit new erstellt und mit System.in verbunden. Dadurch kann er Eingaben aus der Konsole lesen. Dies ist Standard in Java."
+},
+{
+"id": 123,
+"question": "Wie liest man eine ganze Zahl mit Scanner?",
+"options": {
+"A": "sc.nextLine()",
+"B": "sc.nextInt()",
+"C": "sc.int()",
+"D": "sc.readInt()"
+},
+"correctAnswer": "B",
+"explanation": "nextInt() liest eine ganze Zahl aus der Konsole ein. Die Eingabe wird als int gespeichert. Andere Varianten existieren so nicht in Java."
+},
+{
+"id": 124,
+"question": "Was speichert sc.nextInt()?",
+"options": {
+"A": "einen String",
+"B": "eine Methode",
+"C": "eine Zahl (int)",
+"D": "eine Klasse"
+},
+"correctAnswer": "C",
+"explanation": "nextInt() liefert einen int-Wert zurück. Dieser kann in einer Variable gespeichert werden. Es ist kein Text, sondern eine Zahl."
+},
+{
+"id": 125,
+"question": "Was bedeutet = in Java?",
+"options": {
+"A": "Vergleich",
+"B": "Zuweisung",
+"C": "Schleife",
+"D": "Ausgabe"
+},
+"correctAnswer": "B",
+"explanation": "Das = Zeichen weist einer Variablen einen Wert zu. Es speichert Daten in einer Variablen. Es ist kein Vergleich."
+},
+{
+"id": 126,
+"question": "Was bedeutet == in Java?",
+"options": {
+"A": "Zuweisung",
+"B": "Vergleich",
+"C": "Ausgabe",
+"D": "Schleife"
+},
+"correctAnswer": "B",
+"explanation": "Der Operator == vergleicht zwei Werte. Er prüft, ob sie gleich sind. Das Ergebnis ist true oder false."
+},
+{
+"id": 127,
+"question": "Was bedeutet != ?",
+"options": {
+"A": "gleich",
+"B": "ungleich",
+"C": "größer",
+"D": "kleiner"
+},
+"correctAnswer": "B",
+"explanation": "!= prüft, ob zwei Werte verschieden sind. Wenn sie unterschiedlich sind, ergibt die Bedingung true. Sonst false."
+},
+{
+"id": 128,
+"question": "Was passiert im Schleifenblock?",
+"options": {
+"A": "er wird einmal ausgeführt",
+"B": "er wird nie ausgeführt",
+"C": "er wird wiederholt ausgeführt",
+"D": "er kompiliert den Code"
+},
+"correctAnswer": "C",
+"explanation": "Alles im Block wird bei jedem Schleifendurchlauf erneut ausgeführt. Dadurch entsteht Wiederholung im Programm. Das ist der zentrale Zweck von Schleifen."
+},
+{
+"id": 129,
+"question": "Was passiert zuerst in einer for-Schleife?",
+"options": {
+"A": "Bedingung",
+"B": "Veränderung",
+"C": "Initialisierung",
+"D": "Ausgabe"
+},
+"correctAnswer": "C",
+"explanation": "Zuerst wird die Variable initialisiert. Danach wird die Bedingung geprüft und der Code ausgeführt. Erst am Ende wird die Variable verändert."
+},
+{
+"id": 130,
+"question": "Was passiert bei falscher Groß-/Kleinschreibung?",
+"options": {
+"A": "Programm läuft schneller",
+"B": "kein Effekt",
+"C": "Fehler beim Kompilieren",
+"D": "automatische Korrektur"
+},
+"correctAnswer": "C",
+"explanation": "Java erkennt Unterschiede in Groß- und Kleinschreibung exakt. Ein falscher Buchstabe führt zu einem Fehler. Das Programm kann dann nicht starten."
+},
+{
+"id": 131,
+"question": "In welcher Reihenfolge wird ein Java-Programm korrekt aufgebaut?",
+"options": {
+"A": "main → class → import",
+"B": "import → class → main",
+"C": "class → import → main",
+"D": "import → main → class"
+},
+"correctAnswer": "B",
+"explanation": "Ein Java-Programm folgt einer festen Struktur, die der Compiler erwartet. Imports stehen am Anfang, weil sie externe Klassen verfügbar machen. Danach folgt die Klassendeklaration als grundlegender Container. Innerhalb der Klasse liegt die main-Methode, die als Startpunkt der Programmausführung dient."
+},
+{
+"id": 132,
+"question": "Wo wird in Java ausführbarer Code geschrieben?",
+"options": {
+"A": "außerhalb der Klasse",
+"B": "in der main-Methode",
+"C": "im import-Bereich",
+"D": "nur in Variablen"
+},
+"correctAnswer": "B",
+"explanation": "Ausführbarer Code gehört in die main-Methode, da dort das Programm startet. Java ignoriert Code außerhalb von Methoden, wenn er nicht korrekt eingebettet ist. Imports dienen nur dem Zugriff auf externe Klassen. Die Klasse selbst ist nur eine Struktur, kein Ablauf."
+},
+{
+"id": 133,
+"question": "Was ist die main-Methode?",
+"options": {
+"A": "eine Variable",
+"B": "eine Schleife",
+"C": "der Startpunkt des Programms",
+"D": "ein Datentyp"
+},
+"correctAnswer": "C",
+"explanation": "Die main-Methode ist der definierte Einstiegspunkt für jedes Java-Programm. Die Java Virtual Machine sucht genau diese Methode, um die Ausführung zu starten. Ohne sie kann kein Programm direkt gestartet werden. Sie enthält typischerweise den gesamten Ablauf oder ruft andere Methoden auf."
+},
+{
+  "id": 134,
+  "question": "Welche Aussage ist korrekt?",
+  "options": {
+    "A": "Code kann außerhalb der Klasse stehen",
+    "B": "Alles muss innerhalb von Klassen stehen",
+    "C": "Klassen sind optional",
+    "D": "main ist eine Variable"
+  },
+  "correctAnswer": "B",
+  "explanation": "Java ist streng objektorientiert, daher muss jeder ausführbare Code innerhalb einer Klasse stehen.\nEs gibt keinen „freien“ Code außerhalb dieser Struktur.\nKlassen bilden den Rahmen für Methoden und Variablen.\nDadurch bleibt der Aufbau klar und strukturiert."
+},
+{
+  "id": 135,
+  "question": "Was passiert, wenn eine geschweifte Klammer fehlt?",
+  "options": {
+    "A": "nichts passiert",
+    "B": "Programm läuft schneller",
+    "C": "Compiler-Fehler",
+    "D": "Variable wird gelöscht"
+  },
+  "correctAnswer": "C",
+  "explanation": "Geschweifte Klammern definieren Blöcke, also zusammengehörige Codebereiche.\nFehlt eine Klammer, kann der Compiler die Struktur nicht mehr eindeutig erkennen.\nDadurch entsteht ein Syntaxfehler und das Programm lässt sich nicht starten.\nBesonders bei Schleifen und Methoden ist das kritisch."
+},
+{
+  "id": 136,
+  "question": "Wie wird ein Scanner korrekt erstellt?",
+  "options": {
+    "A": "Scanner sc = System.in",
+    "B": "Scanner sc = new Scanner(System.out)",
+    "C": "Scanner sc = new Scanner(System.in)",
+    "D": "Scanner = new input()"
+  },
+  "correctAnswer": "C",
+  "explanation": "Der Scanner wird über new Scanner(System.in) erzeugt, um Eingaben über die Tastatur zu lesen.\nSystem.in ist dabei die Standard-Eingabequelle.\nOhne new wird kein Objekt erstellt, daher wäre die Eingabe nicht möglich.\nDer Scanner muss zusätzlich importiert werden."
+},
+{
+  "id": 137,
+  "question": "Was macht nextInt()?",
+  "options": {
+    "A": "liest Text",
+    "B": "liest eine Zahl",
+    "C": "gibt Text aus",
+    "D": "erstellt eine Variable"
+  },
+  "correctAnswer": "B",
+  "explanation": "nextInt() liest eine ganze Zahl aus der Benutzereingabe.\nDer eingegebene Wert wird direkt als int gespeichert.\nEs findet keine Umwandlung in Text statt.\nDadurch kann die Zahl direkt für Berechnungen genutzt werden."
+},
+{
+  "id": 138,
+  "question": "Was passiert bei falscher Reihenfolge? Scanner sc = new Scanner(System.in); int x = sc.nextInt();",
+  "options": {
+    "A": "funktioniert immer",
+    "B": "kann Fehler verursachen",
+    "C": "ist schneller",
+    "D": "ist Pflicht"
+  },
+  "correctAnswer": "B",
+  "explanation": "Die Reihenfolge der Befehle ist entscheidend, da der Scanner zuerst initialisiert werden muss.\nWenn Eingaben vor der Erstellung des Scanners verarbeitet werden, kommt es zu Laufzeitfehlern.\nAuch falsche Eingabemethoden können Probleme verursachen.\nDie Struktur muss logisch korrekt aufgebaut sein."
+},
+{
+  "id": 139,
+  "question": "Wofür braucht man Variablen bei Eingaben?",
+  "options": {
+    "A": "zur Ausgabe",
+    "B": "zum Speichern der Eingabe",
+    "C": "zur Kompilierung",
+    "D": "zum Löschen von Daten"
+  },
+  "correctAnswer": "B",
+  "explanation": "Variablen speichern Werte, die der Benutzer eingibt.\nOhne Speicherung wären die Daten sofort verloren und nicht weiter nutzbar.\nSie ermöglichen Berechnungen und spätere Verarbeitung.\nBesonders bei Scanner-Eingaben sind sie zwingend notwendig."
+},
+{
+  "id": 140,
+  "question": "Was ist der Unterschied zwischen nextInt() und nextLine()?",
+  "options": {
+    "A": "kein Unterschied",
+    "B": "int liest Zahlen, nextLine Text",
+    "C": "beide lesen Zahlen",
+    "D": "beide lesen Klassen"
+  },
+  "correctAnswer": "B",
+  "explanation": "nextInt() liest eine ganze Zahl, während nextLine() eine komplette Textzeile einliest.\nBeide Methoden gehören zur Scanner-Klasse, unterscheiden sich aber im Datentyp der Rückgabe.\nDas ist wichtig, da Java strikt zwischen Zahlen und Text trennt.\nFalsche Nutzung führt häufig zu Eingabefehlern."
+},
+{
+  "id": 141,
+  "question": "Was bedeutet = in Java?",
+  "options": {
+    "A": "Vergleich",
+    "B": "Zuweisung",
+    "C": "Addition",
+    "D": "Schleife"
+  },
+  "correctAnswer": "B",
+  "explanation": "Das = Zeichen weist einer Variablen einen bestimmten Wert zu.\nEs bedeutet nicht „gleich“, sondern „bekommt den Wert“.\nDie Zuweisung speichert Daten im Speicher der Variable.\nErst dadurch kann später damit gearbeitet werden."
+},
+{
+  "id": 142,
+  "question": "Was bedeutet == ?",
+  "options": {
+    "A": "Zuweisung",
+    "B": "Vergleich",
+    "C": "Schleife",
+    "D": "Ausgabe"
+  },
+  "correctAnswer": "B",
+  "explanation": "Der Operator == prüft, ob zwei Werte identisch sind.\nEr wird ausschließlich in Bedingungen verwendet, z. B. in if-Anweisungen.\nIm Gegensatz zu = verändert er keine Werte.\nEin häufiger Fehler ist die Verwechslung der beiden Operatoren."
+},
+{
+  "id": 143,
+  "question": "Welche Schreibweise ist korrekt für Variablen?",
+  "options": {
+    "A": "1zahl",
+    "B": "Zahl1",
+    "C": "Zahl-1",
+    "D": "int Zahl ="
+  },
+  "correctAnswer": "B",
+  "explanation": "Variablennamen dürfen nicht mit einer Zahl beginnen.\nSie müssen mit einem Buchstaben oder Unterstrich starten.\nDanach dürfen Zahlen enthalten sein.\nDiese Regel ist fest in der Java-Syntax verankert."
+},
+{
+  "id": 144,
+  "question": "Welche Schreibweise ist korrekt in Java?",
+  "options": {
+    "A": "system.out.println",
+    "B": "System.out.println",
+    "C": "SYSTEM.OUT.PRINTLN",
+    "D": "system.Out.Print"
+  },
+  "correctAnswer": "B",
+  "explanation": "Java unterscheidet strikt zwischen Groß- und Kleinschreibung.\nSystem.out.println ist eine fest definierte Methode der Standardbibliothek.\nJede Abweichung führt zu einem Fehler.\nDaher muss die Schreibweise exakt eingehalten werden."
+},
+{
+  "id": 145,
+  "question": "Was passiert bei int x = \"5\"; ?",
+  "options": {
+    "A": "korrekt",
+    "B": "Fehler",
+    "C": "automatische Umwandlung",
+    "D": "Schleife"
+  },
+  "correctAnswer": "B",
+  "explanation": "Ein String kann nicht direkt in einen int gespeichert werden, da es unterschiedliche Datentypen sind.\nJava führt keine automatische Umwandlung zwischen Text und Zahl durch.\nDeshalb entsteht ein Typfehler beim Kompilieren.\nEine Umwandlung müsste explizit erfolgen."
+},
+{
+  "id": 146,
+  "question": "Welche Struktur beschreibt eine vollständige if-else-Bedingung korrekt?",
+  "options": {
+    "A": "if (Bedingung) { Code } else { Code }",
+    "B": "if Bedingung { Code } else Code",
+    "C": "if { Bedingung } Code else",
+    "D": "if (Code) Bedingung else"
+  },
+  "correctAnswer": "A",
+  "explanation": "Eine if-else-Struktur besteht aus einer Bedingung in runden Klammern und einem Codeblock in geschweiften Klammern.\nWenn die Bedingung wahr ist, wird der erste Block ausgeführt.\nIst sie falsch, wird der Code im else-Block ausgeführt.\nDiese Struktur ist zentral für Entscheidungen im Programm und wird häufig mit Benutzereingaben oder Berechnungen kombiniert."
+},
+{
+  "id": 147,
+  "question": "Was passiert, wenn die Bedingung in einem if-Statement false ist und kein else vorhanden ist?",
+  "options": {
+    "A": "der Code wird trotzdem ausgeführt",
+    "B": "das Programm beendet sich",
+    "C": "der Code im if-Block wird übersprungen",
+    "D": "eine Schleife beginnt"
+  },
+  "correctAnswer": "C",
+  "explanation": "Wenn die Bedingung false ist, wird der Code innerhalb des if-Blocks nicht ausgeführt.\nGibt es kein else, passiert einfach nichts und das Programm läuft mit der nächsten Anweisung weiter.\nDieses Verhalten ist wichtig, da Bedingungen nur dann aktiv werden, wenn sie wahr sind."
+},
+{
+  "id": 148,
+  "question": "Wozu dient else if in Java?",
+  "options": {
+    "A": "um mehrere Bedingungen nacheinander zu prüfen",
+    "B": "um eine Schleife zu starten",
+    "C": "um Variablen zu deklarieren",
+    "D": "um Eingaben zu lesen"
+  },
+  "correctAnswer": "A",
+  "explanation": "Mit else if können mehrere Bedingungen hintereinander überprüft werden.\nJava prüft dabei von oben nach unten.\nSobald eine Bedingung wahr ist, wird der entsprechende Codeblock ausgeführt und die restlichen Bedingungen werden übersprungen.\nDadurch lassen sich komplexere Entscheidungsstrukturen aufbauen."
+},
+{
+  "id": 149,
+  "question": "Welche Bedingung prüft, ob zwei Werte ungleich sind?",
+  "options": {
+    "A": "==",
+    "B": "=",
+    "C": "!=",
+    "D": "<>"
+  },
+  "correctAnswer": "C",
+  "explanation": "Der Operator != bedeutet „nicht gleich“.\nEr wird verwendet, um zu prüfen, ob zwei Werte unterschiedlich sind.\nDas ist besonders nützlich in Bedingungen oder Schleifen, wenn ein Programm so lange laufen soll, bis ein bestimmter Wert erreicht wird."
+},
+{
+  "id": 150,
+  "question": "Was passiert in diesem Beispiel? int zahl = 5\nif (zahl > 3)\nSystem.out.println(\"groß\");",
+  "options": {
+    "A": "Fehler, weil die Bedingung falsch ist",
+    "B": "der Text wird ausgegeben",
+    "C": "das Programm stoppt",
+    "D": "eine Schleife beginnt"
+  },
+  "correctAnswer": "B",
+  "explanation": "Die Bedingung prüft, ob zahl größer als 3 ist.\nDa 5 größer als 3 ist, wird der Befehl ausgeführt und der Text ausgegeben.\nAuch ohne geschweifte Klammern funktioniert das bei einer einzelnen Anweisung.\nBei mehreren Anweisungen sind geschweifte Klammern jedoch zwingend notwendig."
+},
+{
+  "id": 151,
+  "question": "Warum werden geschweifte Klammern bei if-Strukturen empfohlen?",
+  "options": {
+    "A": "sie beschleunigen das Programm",
+    "B": "sie verhindern Syntaxfehler",
+    "C": "sie definieren klar den Codeblock",
+    "D": "sie sind für Variablen notwendig"
+  },
+  "correctAnswer": "C",
+  "explanation": "Geschweifte Klammern zeigen genau, welcher Code zur Bedingung gehört.\nAlles innerhalb der Klammern wird nur ausgeführt, wenn die Bedingung erfüllt ist.\nOhne Klammern gilt nur die nächste einzelne Anweisung.\nDas kann zu Fehlern führen, wenn mehrere Befehle eigentlich zusammengehören."
+},
+{
+  "id": 152,
+  "question": "Welche Reihenfolge ist typisch für Programme mit Benutzereingabe?",
+  "options": {
+    "A": "Berechnung → Ausgabe → Eingabe",
+    "B": "Eingabe → Berechnung → Ausgabe",
+    "C": "Ausgabe → Berechnung → Eingabe",
+    "D": "Schleife → Ausgabe → Eingabe"
+  },
+  "correctAnswer": "B",
+  "explanation": "Zuerst wird ein Wert eingelesen, zum Beispiel mit Scanner.\nDanach wird dieser Wert im Programm verarbeitet, etwa durch Berechnungen oder Bedingungen.\nAm Ende wird das Ergebnis ausgegeben.\nDiese Struktur findet sich in vielen einfachen Programmen wieder."
+},
+{
+  "id": 153,
+  "question": "Was macht dieses Programm?\nint zahl = 10\nif (zahl < 5)\nSystem.out.println(\"klein\");\nelse\nSystem.out.println(\"groß\");",
+  "options": {
+    "A": "gibt „klein“ aus",
+    "B": "gibt „groß“ aus",
+    "C": "gibt beide Texte aus",
+    "D": "erzeugt eine Schleife"
+  },
+  "correctAnswer": "B",
+  "explanation": "Die Bedingung prüft, ob die Zahl kleiner als 5 ist. Da 10 größer als 5 ist, ist die Bedingung falsch. Deshalb wird der else-Teil ausgeführt und „groß“ ausgegeben. Diese Struktur erlaubt es, zwei mögliche Programmpfade zu definieren."
+},
+{
+  "id": 154,
+  "question": "Warum wird häufig eine while-Schleife mit Eingaben kombiniert?",
+  "options": {
+    "A": "um das Programm automatisch zu beenden",
+    "B": "um wiederholt Eingaben zu prüfen",
+    "C": "um Variablen zu löschen",
+    "D": "um Klassen zu erstellen"
+  },
+  "correctAnswer": "B",
+  "explanation": "Eine while-Schleife kann solange laufen, bis eine bestimmte Bedingung erfüllt ist. Dadurch lassen sich Eingaben wiederholt prüfen, etwa bis der Benutzer einen gültigen Wert eingibt. Das ist ein häufiges Muster in interaktiven Programmen."
+},
+{
+  "id": 155,
+  "question": "Welche Aussage beschreibt eine typische Fehlerquelle bei Eingaben?",
+  "options": {
+    "A": "Scanner kann keine Zahlen lesen",
+    "B": "falscher Datentyp wird verwendet",
+    "C": "Java erlaubt keine Eingaben",
+    "D": "Variablen dürfen keine Werte speichern"
+  },
+  "correctAnswer": "B",
+  "explanation": "Ein häufiger Fehler ist, dass ein falscher Datentyp verwendet wird. Zum Beispiel versucht man, Text mit nextInt() zu lesen oder eine Zahl in eine String-Variable zu speichern. Java ist stark typisiert, daher müssen Datentyp und Eingabemethode zusammenpassen."
+},
+{
+  "id": 156,
+  "question": "Was macht eine do-while-Schleife im Unterschied zu einer while-Schleife?",
+  "options": {
+    "A": "sie läuft nie",
+    "B": "sie wird mindestens einmal ausgeführt",
+    "C": "sie prüft keine Bedingung",
+    "D": "sie ersetzt if"
+  },
+  "correctAnswer": "B",
+  "explanation": "Bei einer do-while-Schleife wird der Codeblock zuerst ausgeführt und erst danach die Bedingung geprüft. Dadurch wird der Schleifeninhalt immer mindestens einmal ausgeführt. Das ist besonders sinnvoll bei Eingaben, die mindestens einmal erfolgen müssen."
+},
+{
+  "id": 157,
+  "question": "Was ist eine Methode in Java?",
+  "options": {
+    "A": "eine Schleife",
+    "B": "ein wiederverwendbarer Codeblock",
+    "C": "eine Variable",
+    "D": "eine Klasse"
+  },
+  "correctAnswer": "B",
+  "explanation": "Eine Methode ist ein benannter Abschnitt von Code, der eine bestimmte Aufgabe erfüllt. Sie kann mehrfach aufgerufen werden und verhindert, dass derselbe Code mehrfach geschrieben werden muss. Methoden verbessern die Struktur und Lesbarkeit von Programmen."
+},
+{
+  "id": 158,
+  "question": "Warum werden Methoden verwendet?",
+  "options": {
+    "A": "um Programme länger zu machen",
+    "B": "um Code zu strukturieren und wiederzuverwenden",
+    "C": "um Variablen zu löschen",
+    "D": "um Scanner zu ersetzen"
+  },
+  "correctAnswer": "B",
+  "explanation": "Methoden helfen, Programme übersichtlich zu halten. Komplexe Aufgaben können in kleinere Einheiten zerlegt werden. Außerdem kann eine Methode mehrfach verwendet werden, ohne den gleichen Code immer wieder neu zu schreiben."
+},
+{
+  "id": 159,
+  "question": "Was bedeutet return in einer Methode?",
+  "options": {
+    "A": "beendet eine Schleife",
+    "B": "gibt einen Wert zurück",
+    "C": "erstellt eine Variable",
+    "D": "startet das Programm"
+  },
+  "correctAnswer": "B",
+  "explanation": "Mit return wird ein Wert aus einer Methode an den aufrufenden Teil des Programms zurückgegeben. Das ermöglicht Berechnungen in einer Methode und die Nutzung des Ergebnisses an anderer Stelle. Gleichzeitig beendet return die Ausführung der Methode."
+},
+{
+  "id": 160,
+  "question": "Was ist der Unterschied zwischen main und anderen Methoden?",
+  "options": {
+    "A": "main ist eine Variable",
+    "B": "main ist der Startpunkt des Programms",
+    "C": "main ist eine Schleife",
+    "D": "main ist optional"
+  },
+  "correctAnswer": "B",
+  "explanation": "Die main-Methode ist der fest definierte Einstiegspunkt eines Java-Programms. Wenn ein Programm gestartet wird, beginnt die Ausführung immer dort. Andere Methoden müssen von main oder von anderen Methoden aufgerufen werden. Ohne diesen Aufruf werden sie nicht ausgeführt."
+}
+]
